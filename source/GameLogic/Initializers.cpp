@@ -68,6 +68,7 @@ inline ActionSpace craftActionSpace(const std::string& spaceName,
 
     newSpace.spaceName_ = spaceName;
     newSpace.isOccupied_ = false;
+    newSpace.cost_ = ResourcePool();
 
     applyReward(newSpace, reward);
 

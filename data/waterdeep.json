@@ -1,0 +1,433 @@
+{
+    "TotalActionSpaces": 13,
+    "TotalQuests": 0,
+    "TotalIntrigues": 0,
+    "TotalLords": 0,
+    "TotalBuildings": 0,
+
+    "ActionSpaces": [
+        {
+            "Name": "The Plinth",
+            "RewardType": "Resource",
+            "Reward": {
+                "Priest": 1
+            },
+
+            "SecondaryRewardType": "None"
+        },
+        {
+            "Name": "Blackstaff Tower",
+            "RewardType": "Resource",
+            "Reward": {
+                "Mage": 1
+            },
+
+            "SecondaryRewardType": "None"
+        },
+        {
+            "Name": "Field of Triumph",
+            "RewardType": "Resource",
+            "Reward": {
+                "Warrior": 2
+            },
+
+            "SecondaryRewardType": "None"
+        },
+        {
+            "Name": "The Grinning Lion Tavern",
+            "RewardType": "Resource",
+            "Reward": {
+                "Rogue": 2
+            },
+
+            "SecondaryRewardType": "None"
+        },
+        {
+            "Name": "Aurora's Realms Workshop",
+            "RewardType": "Resource",
+            "Reward": {
+                "Coin": 4
+            },
+
+            "SecondaryRewardType": "None"
+        },
+        {
+            "Name": "Castle Waterdeep",
+            "RewardType": "Effect",
+            "Reward": {
+                "Modifier": "Agent",
+                "Submodifier": "Get First Player"
+            },
+
+            "SecondaryRewardType": "Effect",
+            "SecondaryReward": {
+                "Modifier": "Intrigue",
+                "Submodifier": "Draw Intrigue"
+            }
+        },
+        {
+            "Name": "Builder's Hall",
+            "RewardType": "Effect",
+            "Reward": {
+                "Modifier": "Building",
+                "Submodifier": "Construct building"
+            },
+
+            "SecondaryRewardType": "None"
+        },
+        {
+            "Name": "CliffWatch Inn 1",
+            "RewardType": "Resource",
+            "Reward": {
+                "Coin": 2
+            },
+
+            "SecondaryRewardType": "Effect",
+            "SecondaryReward": {
+                "Modifier": "Quest",
+                "Submodifier": "Draw Quest from Slot"
+            }
+        },
+        {
+            "Name": "CliffWatch Inn 2",
+            "RewardType": "Effect",
+            "Reward": {
+                "Modifier": "Intrigue",
+                "Submodifier": "Draw Intrigue"
+            },
+
+            "SecondaryRewardType": "Effect",
+            "SecondaryReward": {
+                "Modifier": "Quest",
+                "Submodifier": "Draw Quest from Slot"
+            }
+        },
+        {
+            "Name": "CliffWatch Inn 3",
+            "RewardType": "Effect",
+            "Reward": {
+                "Modifier": "Quest",
+                "Submodifier": "Reset Quests"
+            },
+
+            "SecondaryRewardType": "None"
+        },
+        {
+            "Name": "Waterdeep Harbour 1",
+            "RewardType": "Effect",
+            "Reward": {
+                "Modifier": "Intrigue",
+                "Submodifier": "Play Intrigue for Agent"
+            },
+
+            "SecondaryRewardType": "None"
+        },
+        {
+            "Name": "Waterdeep Harbour 2",
+            "RewardType": "Effect",
+            "Reward": {
+                "Modifier": "Intrigue",
+                "Submodifier": "Play Intrigue for Agent"
+            },
+
+            "SecondaryRewardType": "None"
+        },
+        {
+            "Name": "Waterdeep Harbour 3",
+            "RewardType": "Effect",
+            "Reward": {
+                "Modifier": "Intrigue",
+                "Submodifier": "Play Intrigue for Agent"
+            },
+
+            "SecondaryRewardType": "None"
+        }
+    ],
+
+    "Buildings": [
+        {
+            "Name": "Spires of The Morning",
+            "ActionSpace": {
+                "RewardType": "Resource",
+                "Reward": {
+                    "Priest": 0
+                },
+
+                "SecondaryRewardType": "None"
+            },
+            "OwnerRewardType": "Points",
+            "OwnerReward": 2,
+            "Cost": 4,
+
+            "HasRefill": true,
+            "RefillEffect": {
+                "RefillType": "Resource",
+                "Refill": {
+                    "Priest": 1
+                }
+            }
+        },
+        {
+            "Name": "Northgate",
+            "ActionSpace": {
+                "RewardType": "Resource",
+                "Reward": {
+                    "Coin": 2,
+                    "Any": 1
+                },
+
+                "SecondaryRewardType": "None"
+            },
+            "OwnerRewardType": "Points",
+            "OwnerReward": 2,
+            "Cost": 3,
+
+            "HasRefill": false
+        },
+        {
+            "Name": "Jester's Court",
+            "ActionSpace": {
+                "RewardType": "Resource",
+                "Reward": {
+                    "Rogue": 0
+                },
+
+                "SecondaryRewardType": "None"
+            },
+            "OwnerRewardType": "Resource",
+            "OwnerReward": {
+                "Rogue": 1
+            },
+            "Cost": 4,
+
+            "HasRefill": true,
+            "RefillEffect": {
+                "RefillType": "Resource",
+                "Refill": {
+                    "Rogue": 2
+                }
+            }
+        },
+        {
+            "Name": "The Tower of Luck",
+            "ActionSpace": {
+                "RewardType": "Resource",
+                "Reward": {
+                    "Rogue": 2,
+                    "Priest": 1
+                },
+
+                "SecondaryRewardType": "None"
+            },
+            "OwnerRewardType": "Resource",
+            "OwnerReward": {
+                "Choice": 1,
+                "Choices": [
+                    {
+                        "Options": 2,
+                        "Multiplier": 1,
+                        "Option1":"Priest",
+                        "Option2": "Rogue"
+                    }
+                ]
+            },
+            "Cost": 8,
+
+            "HasRefill": false
+        },
+        {
+            "Name": "Jester's Court",
+            "ActionSpace": {
+                "RewardType": "Resource",
+                "Reward": {
+                    "Rogue": 2,
+                    "Coin": 2
+                },
+
+                "SecondaryRewardType": "None"
+            },
+            "OwnerRewardType": "Resource",
+            "OwnerReward": {
+                "Rogue": 1
+            },
+            "Cost": 3,
+
+            "HasRefill": false
+        },
+        {
+            "Name": "The Yawning Portal",
+            "ActionSpace": {
+                "RewardType": "Resource",
+                "Reward": {
+                    "Any": 2
+                },
+
+                "SecondaryRewardType": "None"
+            },
+            "OwnerRewardType": "Resource",
+            "OwnerReward": {
+                "Any": 1
+            },
+            "Cost": 4,
+
+            "HasRefill": false
+        },
+        {
+            "Name": "House of Heroes",
+            "ActionSpace": {
+                "RewardType": "Resource",
+                "Reward": {
+                    "Priest": 1,
+                    "Warrior": 2
+                },
+
+                "SecondaryRewardType": "None"
+            },
+            "OwnerRewardType": "Resource",
+            "OwnerReward": {
+                "Choice": 1,
+                "Choices": [
+                    {
+                        "Options": 2,
+                        "Multiplier": 1,
+                        "Option1": "Priest",
+                        "Option2": "Warrior"
+                    }
+                ]
+            },
+            "Cost": 8,
+
+            "HasRefill": false
+        },
+        {
+            "Name": "Fetlock Court",
+            "ActionSpace": {
+                "RewardType": "Resource",
+                "Reward": {
+                    "Mage": 1,
+                    "Warrior": 2
+                },
+
+                "SecondaryRewardType": "None"
+            },
+            "OwnerRewardType": "Resource",
+            "OwnerReward": {
+                "Choice": 1,
+                "Choices": [
+                    {
+                        "Options": 2,
+                        "Multiplier": 1,
+                        "Option1": "Mage",
+                        "Option2": "Warrior"
+                    }
+                ]
+            },
+            "Cost": 8,
+
+            "HasRefill": false
+        },
+        {
+            "Name": "Tower of Order",
+            "ActionSpace": {
+                "RewardType": "Resource",
+                "Reward": {
+                    "Mage": 0
+                },
+
+                "SecondaryRewardType": "None"
+            },
+            "OwnerRewardType": "Effect",
+            "OwnerReward": {
+                "Modifier": "Intrigue",
+                "Submodifier": "Draw Intrigue"
+            },
+            "Cost": 4,
+
+            "HasRefill": true,
+            "RefillEffect": {
+                "RefillType": "Resource",
+                "Refill": {
+                    "Mage": 1
+                }
+            }
+        },
+        {
+            "Name": "Smuggler's Dock",
+            "ActionSpace": {
+                "RewardType": "Resource",
+                "Reward": {
+                    "Choice": 4,
+                    "Choices": [
+                        {
+                            "Options": 2,
+                            "Multiplier": 4,
+                            "Option1": "Warrior",
+                            "Option2": "Rogue"
+                        }
+                    ]
+                },
+
+                "SecondaryRewardType": "None",
+                "Cost": {
+                    "Coin": 2
+                }
+            },
+            "OwnerRewardType": "Resource",
+            "OwnerReward": {
+                "Coin": 2
+            },
+            "Cost": 4,
+
+            "HasRefill": false
+        },
+        {
+            "Name": "House of Wonder",
+            "ActionSpace": {
+                "RewardType": "Resource",
+                "Reward": {
+                    "Choice": 2,
+                    "Choices": [
+                        {
+                            "Options": 2,
+                            "Multiplier": 2,
+                            "Option1": "Priest",
+                            "Option2": "Mage"
+                        }
+                    ]
+                },
+
+                "SecondaryRewardType": "None",
+                "Cost": {
+                    "Coin": 2
+                }
+            },
+            "OwnerRewardType": "Resource",
+            "OwnerReward": {
+                "Coin": 2
+            },
+            "Cost": 4,
+
+            "HasRefill": false
+        },
+        {
+            "Name": "The Zoarstar",
+            "ActionSpace": {
+                "RewardType": "Effect",
+                "Reward": {
+                    "Modifier": "Agent",
+                    "Submodifier": "Use opponent action"
+                },
+
+                "SecondaryRewardType": "None"
+            },
+            "OwnerRewardType": "Points",
+            "OwnerReward": 2,
+            "Cost": 8,
+
+            "HasRefill": false
+        }
+    ],
+    "Quests": [],
+    "Intrigues": [],
+    "Lords": []
+}

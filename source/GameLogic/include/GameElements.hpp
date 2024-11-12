@@ -16,7 +16,9 @@ enum ResourceType {
     ROGUE   = 1,
     PRIEST  = 2,
     MAGE    = 3,
-    COIN    = 4
+    COIN    = 4,
+    ANY     = 5,
+    CHOICE  = 6
 };
 
 enum QuestType {
@@ -63,6 +65,7 @@ typedef std::vector<Effect> Effects;
 
 typedef std::variant<ResourcePool, Effect> Reward;
 typedef std::optional<Reward> OptReward;
+typedef std::optional<Effect> OptEffect;
 
 // Aliases
 
@@ -91,6 +94,8 @@ typedef std::vector<Quest> Quests;
 struct ActionSpace {
     std::string     spaceName_;
 
+    ResourcePool    cost_;
+
     RewardType      rewardType_;
     Reward          reward_;
 
@@ -109,6 +114,8 @@ struct Building {
     Reward          ownerReward_;
 
     PlayerColor     ownerColor_;
+
+    OptEffect       refillEffect_;
 
     uint16_t        buildingCost_;
     uint16_t        bonusPoints_;
