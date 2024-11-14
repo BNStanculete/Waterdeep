@@ -2,12 +2,14 @@
 
 #pragma once
 
-#include <unordered_map>
 #include <stdint.h>
+
+#include <unordered_map>
 #include <optional>
 #include <utility>
 #include <variant>
 #include <string>
+#include <vector>
 
 namespace Waterdeep {
 
@@ -78,7 +80,7 @@ struct Quest {
     QuestType       type_;
     ResourcePool    cost_;
 
-    RewardType      rewardType_;     
+    RewardType      rewardType_;
     Reward          reward_;
 
     RewardType      secondaryRewardType_;

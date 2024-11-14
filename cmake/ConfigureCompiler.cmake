@@ -1,6 +1,6 @@
 # Copyright Bogdan Stanculete 2024. All Rights Reserved.
 
-cmake_minimum_required(VERSION 3.29)
+cmake_minimum_required(VERSION 3.11..3.29)
 
 # ========================
 # Ensure build type is set
@@ -31,11 +31,18 @@ function(configure_compiler)
         else()
 
         endif()
-    elseif(MINGW)
-        message(STATUS "Target compiler: MinGW")
+    else()
+        message(STATUS "Target compiler: Assuming GCC")
 
         if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-
+            target_compile_options(
+                ${COMPILER_TARGET}
+                PRIVATE
+                    -Wall
+                    -Wextra
+                    -Werror
+                    -Wno-unused-private-field   # Temporary
+                )
         else()
 
         endif()

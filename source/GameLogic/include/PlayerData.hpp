@@ -10,7 +10,6 @@ namespace Waterdeep {
 
 class PlayerData {
  public:
-
     /**
      * @brief Destructor
      * 
@@ -44,7 +43,7 @@ class PlayerData {
      * 
      * @param space The action space
      */
-    void PlayAction(ActionSpace& space);
+    void PlayAction(ActionSpace* space);
 
  private:
     PlayerColor     color_;

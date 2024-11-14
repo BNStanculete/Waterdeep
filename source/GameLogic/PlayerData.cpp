@@ -12,15 +12,14 @@ PlayerData::PlayerData(
     color_(color),
     playerAgents_(4, 4),
     playerResources_(),
-    playerScore_(0),
-    isStartingPlayer_((startingColor == color)),
     activeQuests_(),
     completedQuests_(),
     completedPlotQuests_(),
     activeEffects_(),
     intrigues_(),
-    nrOfIntrigues_(0) {
-
+    playerScore_(0),
+    nrOfIntrigues_(0),
+    isStartingPlayer_((startingColor == color)) {
     playerResources_[ResourceType::COIN] = initialCoins;
     if (nrOfPlayers == 2 || nrOfPlayers == 3)
         return;
@@ -29,19 +28,18 @@ PlayerData::PlayerData(
     playerAgents_.second = 7 - nrOfPlayers;
 }
 
-void PlayerData::PlayAction(ActionSpace& space) {
-    
+void PlayerData::PlayAction(ActionSpace* space) {
     // Cannot perform action if player has no agents left.
     if (playerAgents_.first == 0) {
         return;
     }
 
-    space.isOccupied_ = true;
+    space->isOccupied_ = true;
 
-    GetReward(space.rewardType_, space.reward_);
+    GetReward(space->rewardType_, space->reward_);
 
-    if (space.secondaryRewardType_ != RewardType::NONE) {
-        GetReward(space.secondaryRewardType_, space.secondaryReward_.value());
+    if (space->secondaryRewardType_ != RewardType::NONE) {
+        GetReward(space->secondaryRewardType_, space->secondaryReward_.value());
     }
 
     // Check if any quests can be completed.
@@ -57,7 +55,6 @@ void PlayerData::PlayAction(ActionSpace& space) {
     }
 
     if (completed_index < activeQuests_.size()) {
-
         // If a quest has been completed move it accordingly
         if (activeQuests_[completed_index].isPlotQuest_) {
             completedPlotQuests_.push_back(activeQuests_[completed_index]);
@@ -71,7 +68,6 @@ void PlayerData::PlayAction(ActionSpace& space) {
 
 bool PlayerData::CompleteQuest(const Quest& quest) {
     for (const ResourceType resource : IterableResourceTypes) {
-        
         // Ensure that the player can afford the quest
         if (playerResources_[resource] < quest.cost_.at(resource)) {
             return false;
@@ -94,7 +90,7 @@ bool PlayerData::CompleteQuest(const Quest& quest) {
 
     playerScore_ += quest.score_;
 
-    // TODO: Check for active effects and resolve
+    // TODO(BNStanculete): Check for active effects and resolve
 
     return true;
 }
@@ -108,7 +104,7 @@ void PlayerData::GetReward(const RewardType type, const Reward& reward) {
         }
     }
 
-    // TODO: IMPLEMENT EFFECT REWARDS
+    // TODO(BNStanculete): IMPLEMENT EFFECT REWARDS
 }
 
 Players setupPlayers(const std::vector<PlayerColor>& colorOrders) {
