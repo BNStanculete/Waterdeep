@@ -9,7 +9,9 @@ cmake_minimum_required(VERSION 3.11..3.29)
 add_library(
     WaterdeepLogic STATIC
     GameLogic/PlayerData.cpp
-    GameLogic/Initializers.cpp)
+    GameLogic/Initializers.cpp
+    GameLogic/GameBoard.cpp
+    GameLogic/ConfigurationParser.cpp)
 
 # =====================
 # Including directories

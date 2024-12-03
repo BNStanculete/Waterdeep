@@ -34,7 +34,7 @@ void PlayerData::PlayAction(ActionSpace* space) {
         return;
     }
 
-    space->isOccupied_ = true;
+    space->occupier_ = PlayerColor::NO_PLAYER;
 
     GetReward(space->rewardType_, space->reward_);
 

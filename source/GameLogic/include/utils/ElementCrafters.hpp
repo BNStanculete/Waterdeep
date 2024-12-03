@@ -48,6 +48,7 @@ inline ActionSpace craftActionSpace(const std::string& spaceName,
     ActionSpace newSpace;
 
     newSpace.spaceName_ = spaceName;
+    newSpace.occupier_ = PlayerColor::NO_PLAYER;
 
     applyReward(&newSpace, reward);
     applyReward(&newSpace, optReward, true);
@@ -65,7 +66,7 @@ inline ActionSpace craftActionSpace(const std::string& spaceName,
     ActionSpace newSpace;
 
     newSpace.spaceName_ = spaceName;
-    newSpace.isOccupied_ = false;
+    newSpace.occupier_ = PlayerColor::NO_PLAYER;
     newSpace.cost_ = ResourcePool();
 
     applyReward(&newSpace, reward);

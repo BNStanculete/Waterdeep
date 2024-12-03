@@ -14,45 +14,45 @@
 namespace Waterdeep {
 
 enum ResourceType {
-    WARRIOR = 0,
-    ROGUE   = 1,
-    PRIEST  = 2,
-    MAGE    = 3,
-    COIN    = 4,
-    ANY     = 5,
-    CHOICE  = 6
+    WARRIOR,
+    ROGUE,
+    PRIEST,
+    MAGE,
+    COIN,
+    ANY
 };
 
 enum QuestType {
-    PIETY       = 0,
-    SKULLDUGERY = 1,
-    WARFARE     = 2,
-    ARCANA      = 3,
-    COMMERCE    = 4
+    PIETY,
+    SKULLDUGERY,
+    WARFARE,
+    ARCANA,
+    COMMERCE
 };
 
 enum RewardType {
-    NONE        = 0,
-    RESOURCE    = 1,
-    EFFECT      = 2,
+    NONE,
+    RESOURCE,
+    EFFECT
 };
 
 enum Modifier {
-    AGENT_MOD       = 0,
-    RESOURCE_MOD    = 1,
-    QUEST_MOD       = 2,
-    INTRIGUE_MOD    = 3,
-    PLACEMENT_MOD   = 4,
-    POINTS_MOD      = 5,
-    BUILDING_MOD    = 6
+    AGENT_MOD,
+    RESOURCE_MOD,
+    QUEST_MOD,
+    INTRIGUE_MOD,
+    PLACEMENT_MOD,
+    POINTS_MOD,
+    BUILDING_MOD
 };
 
 enum PlayerColor {
-    RED     = 0,
-    GREEN   = 1,
-    YELLOW  = 2,
-    BLUE    = 3,
-    GRAY    = 4
+    RED,
+    GREEN,
+    YELLOW,
+    BLUE,
+    GRAY,
+    NO_PLAYER
 };
 
 /*
@@ -104,7 +104,7 @@ struct ActionSpace {
     RewardType      secondaryRewardType_;
     OptReward       secondaryReward_;
 
-    bool            isOccupied_;
+    PlayerColor     occupier_;
 };
 
 struct Building {
@@ -164,21 +164,5 @@ static std::vector<ResourceType> IterableResourceTypes = {
 #define GET_QUEST_DECK 20
 #define GET_QUEST_SLOT 21
 #define RESET_QUESTS 23
-
-// -- Global initializers
-
-/**
- * @brief Initializes the starting actionSpaces
- * 
- * @return ActionSpaces 
- */
-ActionSpaces setupInitialActionSpaces();
-
-/**
- * @brief Initializes all the quests
- * 
- * @return Quests 
- */
-Quests setupQuestDeck();
 
 }  // namespace Waterdeep

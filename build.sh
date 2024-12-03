@@ -9,3 +9,7 @@ function build() {
     cmake -B build -S .
     cmake --build build
 }
+
+function cppcheck() {
+    cppcheck source/
+}
